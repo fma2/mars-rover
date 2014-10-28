@@ -84,4 +84,5 @@ end
 #script
 rove = Rover.new("input.csv")
 #rove.check_location(@rover1_coordinates)
+
 # rove.move(@rover1_coordinates, @rover1_directions)
