@@ -4,7 +4,7 @@ require_relative "./plateau"
 
 input = File.readlines("input.txt")
 
-plateau = Plateau.new(input.shift.chomp.split[0,2].map(&:to_i)) #stored as string
+plateau = Plateau.new(input.shift.chomp.split[0,2].map(&:to_i))
 
 while input != []
 	rover_position = input.shift
