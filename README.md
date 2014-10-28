@@ -1,2 +1,2 @@
-mars-rover
+mars-rover-ruby
 ==========
