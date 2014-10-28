@@ -2,7 +2,7 @@ require_relative "./rover"
 require_relative "./rover-manager"
 require_relative "./plateau"
 
-input = File.readlines("input.txt")
+input = File.readlines("src/input.txt") #needs to be changed to "input.txt" if want to run without Rake command
 
 plateau = Plateau.new(input.shift.chomp.split[0,2].map(&:to_i))
 
