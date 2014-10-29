@@ -8,10 +8,7 @@ public class Manager {
 	}
 
 	public void direct(String instructions){
-		for (char ch: instructions.toCharArray()) {
-			
-			System.out.println(ch); // for debugging
-			
+		for (char ch: instructions.toCharArray()) {	
 			if(Character.toString(ch).equals("L")){
 				rover.turnLeft();
 			} else if(Character.toString(ch).equals("R")){
@@ -19,11 +16,6 @@ public class Manager {
 			} else if(Character.toString(ch).equals("M")){
 				rover.move();
 			}
-//			switch (Character.toString(ch)) {
-//				case "L": rover.turnLeft();
-//				case "R": rover.turnRight();
-//				case "M": rover.move();
-//			}
 		}
 	}
 
