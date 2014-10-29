@@ -10,7 +10,7 @@ public class MarsRover {
 		int[] plateauCoordinates;
 		String roverPosition;
 		int[] position;
-		String direction;
+		Direction direction;
 		Rover rover;
 		Plateau plateau;
 //		Manager manager;
@@ -26,13 +26,16 @@ public class MarsRover {
 			roverPosition = br.readLine();
 			String[] parts = roverPosition.split(" ");
 			position = new int[] {Integer.valueOf(parts[0]), Integer.valueOf(parts[1])};
-			direction = parts[2];
+			
+//			System.out.println(parts[2]);
+			
+			direction = Direction.fromString(parts[2]);
+			
+			
 			rover = new Rover(position, direction);
 			
 			new Manager(rover).direct(br.readLine());
 			
-//			System.out.println(rover.direction );
-
 			
 			while ((sCurrentLine = br.readLine()) != null) {						
 //				roverPosition = sCurrentLine;
