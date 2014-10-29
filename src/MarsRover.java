@@ -8,11 +8,17 @@ public class MarsRover {
 	public static void main(String[] args) {
 		
 		int[] plateauCoordinates;
-		String roverPosition;
-		int[] position;
-		Direction direction;
-		Rover rover;
 		Plateau plateau;
+		
+		String roverPosition1;
+		int[] position1;
+		Direction direction1;
+		Rover rover1;
+		
+		String roverPosition2;
+		int[] position2;
+		Direction direction2;
+		Rover rover2;
 //		Manager manager;
 		
 		try (BufferedReader br = new BufferedReader(new FileReader("src/input.txt")))
@@ -23,31 +29,33 @@ public class MarsRover {
 			plateauCoordinates = convertString(br.readLine());
 			plateau = new Plateau(plateauCoordinates);
 			
-			roverPosition = br.readLine();
-			String[] parts = roverPosition.split(" ");
-			position = new int[] {Integer.valueOf(parts[0]), Integer.valueOf(parts[1])};
-			direction = Direction.fromString(parts[2]);
-					
-//			if (parts[2].equals("N")) {
-//				direction = new North();
-//			} else if (parts[2].equals("S")) {
-//				direction = new South();
-//			} else if (parts[2].equals("E")) {
-//				direction = new East();
-//			} else if (parts[2].equals("W")) {
-//				direction = new West();
-//			}
-			rover = new Rover(position, direction);
+			roverPosition1 = br.readLine();
+			String[] parts1 = roverPosition1.split(" ");
+			position1 = new int[] {Integer.valueOf(parts1[0]), Integer.valueOf(parts1[1])};
+			direction1 = Direction.fromString(parts1[2]);
+			rover1 = new Rover(position1, direction1);
+			new Manager(rover1).direct(br.readLine());
+			rover1.printStatus();
 			
-			new Manager(rover).direct(br.readLine());
-			
+			roverPosition2 = br.readLine();
+			String[] parts2 = roverPosition2.split(" ");
+			position2 = new int[] {Integer.valueOf(parts2[0]), Integer.valueOf(parts2[1])};
+			direction2 = Direction.fromString(parts2[2]);
+			rover2 = new Rover(position2, direction2);
+			new Manager(rover2).direct(br.readLine());
+			rover2.printStatus();
+//			
 			
 			while ((sCurrentLine = br.readLine()) != null) {						
 //				roverPosition = sCurrentLine;
+//				System.out.println(roverPosition);
 //				String[] parts = roverPosition.split(" ");
 //				position = new int[] {Integer.valueOf(parts[0]), Integer.valueOf(parts[1])};
-//				direction = parts[2];
+//				direction = Direction.fromString(parts[2]);
 //				rover = new Rover(position, direction);
+				
+//				new Manager(rover).direct(sCurrentLine);
+//				System.out.println(manager);
 			}
  
 		} catch (IOException e) {
