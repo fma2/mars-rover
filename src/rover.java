@@ -19,4 +19,10 @@ public class Rover {
 	void turnRight() {
 		direction = direction.turnRight();
 	}
+	
+	void printStatus(){
+		System.out.println(position[0]);
+		System.out.println(position[1]);
+		System.out.println(direction.print());
+	}
 }
