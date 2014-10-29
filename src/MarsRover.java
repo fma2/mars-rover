@@ -26,28 +26,17 @@ public class MarsRover {
 			roverPosition = br.readLine();
 			String[] parts = roverPosition.split(" ");
 			position = new int[] {Integer.valueOf(parts[0]), Integer.valueOf(parts[1])};
-			
-//			System.out.println(parts[2]);
-			
-			if (parts[2].equals("N")) {
-				direction = new North();
-			} else if (parts[2].equals("S")) {
-				direction = new South();
-			} else if (parts[2].equals("E")) {
-				direction = new East();
-			} else if (parts[2].equals("W")) {
-				direction = new West();
-			}
-			
-			direction = new North();
-//			switch (parts[2]) {
-//				case "N": direction = new North();
-//				case "S": direction = new South();
-//				case "E": direction = new East();
-//				case "W": direction = new West();
-//				default : System.out.println("Error!" ); //return new North(); // needs to be redone
+			direction = Direction.fromString(parts[2]);
+					
+//			if (parts[2].equals("N")) {
+//				direction = new North();
+//			} else if (parts[2].equals("S")) {
+//				direction = new South();
+//			} else if (parts[2].equals("E")) {
+//				direction = new East();
+//			} else if (parts[2].equals("W")) {
+//				direction = new West();
 //			}
-			
 			rover = new Rover(position, direction);
 			
 			new Manager(rover).direct(br.readLine());
