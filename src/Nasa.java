@@ -26,8 +26,9 @@ public class Nasa {
  
 			String sCurrentLine;
 			
-			plateauCoordinates = convertString(br.readLine());
+			plateauCoordinates = Plateau.convertString(br.readLine());
 			plateau = new Plateau(plateauCoordinates);
+			System.out.println(plateauCoordinates);
 			
 			roverPosition1 = br.readLine();
 			String[] parts1 = roverPosition1.split(" ");
@@ -44,36 +45,16 @@ public class Nasa {
 			rover2 = new Rover(position2, direction2);
 			new Manager(rover2).direct(br.readLine());
 			rover2.printStatus();
-//			
+		
 			
 			while ((sCurrentLine = br.readLine()) != null) {						
-//				roverPosition = sCurrentLine;
-//				System.out.println(roverPosition);
-//				String[] parts = roverPosition.split(" ");
-//				position = new int[] {Integer.valueOf(parts[0]), Integer.valueOf(parts[1])};
-//				direction = Direction.fromString(parts[2]);
-//				rover = new Rover(position, direction);
-				
-//				new Manager(rover).direct(sCurrentLine);
-//				System.out.println(manager);
+
+				//maybe the information above should go here?
 			}
  
 		} catch (IOException e) {
 			e.printStackTrace();
 		} 
-	}
-	
-	static int[] convertString(String str) {
-		String[] items = str.replaceAll("\\[", "").replaceAll("\\]", "").split(",");
-	
-		int[] results = new int[items.length];
-	
-		for (int i = 0; i < items.length; i++) {
-		    try {
-		        results[i] = Integer.parseInt(items[i]);
-		    } catch (NumberFormatException nfe) {};
-		}
-		return results;
 	}
 
 }
