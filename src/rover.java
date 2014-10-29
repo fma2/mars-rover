@@ -21,8 +21,8 @@ public class Rover {
 	}
 	
 	void printStatus(){
-		System.out.println(position[0]);
-		System.out.println(position[1]);
-		System.out.println(direction.print());
+		System.out.print(position[0]);
+		System.out.print(position[1]);
+		System.out.print(direction.print());
 	}
 }
