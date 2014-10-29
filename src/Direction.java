@@ -14,14 +14,6 @@ abstract class Direction {
 			direction = new West();
 		}
 		return direction;
-//		switch (direction) {
-//			case "N": return new North();
-//			case "S": return new South();
-//			case "E": return new East();
-//			case "W": return new West();
-////			default : return new North(); // needs to be redone
-//		}
-		//return new North(); // needs to be redone
 	}
 	
 	abstract int[] move(int[] currentPosition);
@@ -29,6 +21,8 @@ abstract class Direction {
 	abstract Direction turnLeft();
 	
 	abstract Direction turnRight();
+	
+	abstract String print();
 }
 
 class North extends Direction {
@@ -43,6 +37,10 @@ class North extends Direction {
 	int[] move(int[] currentPosition){
 		currentPosition[1]++;
 		return currentPosition;
+	}
+	
+	String print(){
+		return "N";
 	}
 	
 }
@@ -62,6 +60,10 @@ class South extends Direction {
 		return currentPosition;
 	}
 	
+	String print(){
+		return "S";
+	}
+	
 }
 
 class East extends Direction {
@@ -77,6 +79,10 @@ class East extends Direction {
 		currentPosition[0]++;
 		return currentPosition;
 	}
+
+	String print() {
+		return "E";
+	}
 }
 
 class West extends Direction {
@@ -91,5 +97,9 @@ class West extends Direction {
 	int[] move(int[] currentPosition){
 		currentPosition[0]--;
 		return currentPosition;
+	}
+	
+	String print() {
+		return "W";
 	}
 }
