@@ -1,16 +1,5 @@
 
-abstract class Direction {
-	static Direction fromString(String direction){
-		switch (direction) {
-			case "N": return new North();
-			case "S": return new South();
-			case "E": return new East();
-			case "W": return new West();
-//			default : return new North(); // needs to be redone
-		}
-		return new North(); // needs to be redone
-	}
-	
+abstract class Direction {	
 	abstract int[] move(int[] currentPosition);
 	
 	abstract Direction turnLeft();
