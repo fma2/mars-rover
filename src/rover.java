@@ -1,22 +1,22 @@
 
 public class Rover {
-	public int[] position;
-	public String direction;
+	int[] position;
+	Direction direction;
 	
-	public Rover(int[] currentPosition, String initialDirection) {
+	public Rover(int[] currentPosition, Direction initialDirection) {
 		position = currentPosition;
 		direction = initialDirection;
 	}
 	
-//	public int[] move() {
-//	
-//	}
-//	
-//	public String turnLeft() {
-//		
-//	}
-//	
-//	public String turnRight() {
-//		
-//	}
+	void move() {
+		position = direction.move(position);
+	}
+	
+	void turnLeft() {
+		direction = direction.turnLeft();	
+	}
+	
+	void turnRight() {
+		direction = direction.turnRight();
+	}
 }
