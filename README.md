@@ -68,7 +68,15 @@ java RoverMain input.txt
 
 ##### Testing Script
 
-###### Step 1: Run
+###### Step 1: Make testing-script executable
+
+Because the submission instructions asked for no executable files, you will need to make the test-script file executable.  To do so, run the following command in the src directory:
+
+```
+chmod +x test/test-script
+```
+
+###### Step 2: Run
 
 In the Command Line, make sure you are inside the src folder and run:
 
