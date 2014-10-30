@@ -2,9 +2,11 @@
 public class Manager {
 	
 	Rover rover;
+	Plateau plateau;
 
-	public Manager(Rover newRover) {
+	public Manager(Rover newRover, Plateau newPlateau) {
 		rover = newRover;
+		plateau = newPlateau;
 	}
 
 	public void direct(String instructions){
@@ -15,6 +17,9 @@ public class Manager {
 				rover.turnRight();
 			} else if(Character.toString(ch).equals("M")){
 				rover.move();
+				if (plateau.isRoverOutOfBounds(rover.position)){
+					throw new UnsupportedOperationException("Rover out of bounds!!!");
+				}
 			}
 		}
 	}
