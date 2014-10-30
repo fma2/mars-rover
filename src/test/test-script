@@ -1,0 +1,47 @@
+#1/bin/bash
+
+/usr/bin/javac RoverMain.java Rover.java
+
+# Run input where rover moves out of plateau bounds:
+java RoverMain test/test-input1.txt > /tmp/test-input1.txt.out
+
+# Run standard input:
+java RoverMain test/test-input2.txt > /tmp/test-input2.txt.out
+
+# Run standard input with larger plateau:
+java RoverMain test/test-input3.txt > /tmp/test-input3.txt.out
+
+# Run input where rover begins out of plateau bounds:
+java RoverMain test/test-input4.txt > /tmp/test-input4.txt.out
+
+# Run input where information is missing on rover's coordinates and direction:
+java RoverMain test/test-input5.txt > /tmp/test-input5.txt.out
+
+# Run with invalid input
+java RoverMain test/test-input6.txt > /tmp/test-input6.txt.out
+
+
+function checkfiles {
+# Rewrite file to handle no EOF from java standard output
+cat $1 > /tmp/file1
+cat $2 > /tmp/file2
+echo "" >> /tmp/file1
+echo "\n" >> /tmp/file2
+if `diff /tmp/file1 /tmp/file2 >/dev/null` ; then
+  echo Passed
+else
+  echo Different:
+  cat $1
+  cat $2
+fi
+}
+
+# Compare actual output with expected output, outputs Passed if passed,
+# different if files different.
+checkfiles /tmp/test-input1.txt.out test/test-output1.txt
+checkfiles /tmp/test-input2.txt.out test/test-output2.txt
+checkfiles /tmp/test-input3.txt.out test/test-output3.txt
+checkfiles /tmp/test-input4.txt.out test/test-output4.txt
+checkfiles /tmp/test-input5.txt.out test/test-output5.txt
+checkfiles /tmp/test-input6.txt.out test/test-output6.txt
+
