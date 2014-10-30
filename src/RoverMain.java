@@ -17,7 +17,6 @@ public class RoverMain {
 		Direction direction;
 		Rover rover;
 	
-		
 		try (BufferedReader br = new BufferedReader(new FileReader(inputFileName)))
 		{
  
@@ -29,6 +28,9 @@ public class RoverMain {
 			while ((sCurrentLine = br.readLine()) != null) {						
 				roverPosition = sCurrentLine;
 				String[] parts = roverPosition.split(" ");
+				if (parts.length != 3){
+					throw new UnsupportedOperationException("Invalid input!");
+				}
 				position = new int[] {Integer.valueOf(parts[0]), Integer.valueOf(parts[1])};
 				direction = Direction.fromString(parts[2]);
 				rover = new Rover(position, direction);
@@ -38,9 +40,10 @@ public class RoverMain {
 			}
  
 		} catch (Exception e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 			System.out.println(e.getMessage());
-		} 
+		}
 	}
+	
 
 }
