@@ -1,4 +1,4 @@
-#1/bin/bash
+#!/bin/bash
 
 /usr/bin/javac RoverMain.java Rover.java
 
