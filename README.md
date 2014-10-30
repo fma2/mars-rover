@@ -63,7 +63,7 @@ For all directions, please use a Linux or Apple OS X computer.
 ###### Step 1: Compile
 
 
-In the command line, run:
+In the command line, open the src directory and run:
 
 ```
 /usr/bin/javac RoverMain.java Rover.java
