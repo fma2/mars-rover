@@ -25,34 +25,45 @@ OUTPUT:
 
 The output for each rover should be its final co-ordinates and heading.
 
- 
-INPUT AND OUTPUT
- 
-Test Input:
-5 5
-1 2 N
-LMLMLMLMM
-3 3 E
-MMRMMRMRRM
- 
-Expected Output:
-1 3 N
-5 1 E
+#### Language Used: Java
 
-#### Language Used: 
-Java
 
-#### Design and Assumptions: 
-[brief explanation of your design and assumptions along with your code ]
+#### Description of Design & Assumptions: 
 
-### How to Run
+I initially wrote the application in Ruby and then translated it to Java.  The classes used in both languages are the same.  
 
-##### Application
+The classes are:
+
+- Rover: It holds the Rover position and direction.
+- Plateau: It holds the upper right coordinates (the bounds) of the Plateau.
+- Direction: It is an abstract class that changes the direction and moves of the rover per its current direction and position.
+- Manager: It acts as a driver, moving the rover per the directions provided in the input.
+- RoverMain: It contains the main method to launch the application
+
+Assumptions:
+
+- The rover could not go beyond the bounds of the plateau.
+- The application uses coordinates on a rectangular plateau.
+- Rover #2 does not move until Rover #1 has stopped moving -- so there is no bumping.
+
+If time had allowed:
+
+- Add unit tests with JUnit
+- Add more error handling for incorrect input
+- Add visualization in which one can see the rover move on a plateau in the command line
+
+
+
+## How to Run
+
+For all directions, please use a Linux or Apple OS X computer.
+
+#### Application
 
 ###### Step 1: Compile
 
 
-In the Command Line, run:
+In the command line, run:
 
 ```
 /usr/bin/javac RoverMain.java Rover.java
@@ -60,17 +71,19 @@ In the Command Line, run:
 
 ###### Step 2: Run with provided input
 
-In the Command Line, make sure you are inside of the src folder and run:
+In the command line, make sure you are inside of the src folder and run:
 
 ```
 java RoverMain input.txt  
 ```
 
-##### Testing Script
+#### Testing Script
 
 ###### Step 1: Make testing-script executable
 
-Because the submission instructions asked for no executable files, you will need to make the test-script file executable.  To do so, run the following command in the src directory:
+The script assumes your javac compiler is at /user/bin/javac. 
+
+Because the submission instructions asked for no executable files, you will need to make the test-script file executable. To do so, run the following command in the src directory:
 
 ```
 chmod +x test/test-script
@@ -78,7 +91,7 @@ chmod +x test/test-script
 
 ###### Step 2: Run
 
-In the Command Line, make sure you are inside the src folder and run:
+In the command line, make sure you are inside the src folder and run:
 
 ```
 test/test-script 
