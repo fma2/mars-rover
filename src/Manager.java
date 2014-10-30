@@ -10,6 +10,9 @@ public class Manager {
 	}
 
 	public void direct(String instructions){
+		if (plateau.isRoverOutOfBounds(rover.position)){
+			throw new UnsupportedOperationException("Rover out of bounds!!!");
+		}
 		for (char ch: instructions.toCharArray()) {	
 			if(Character.toString(ch).equals("L")){
 				rover.turnLeft();
