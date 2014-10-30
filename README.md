@@ -60,7 +60,7 @@ In the Command Line, run:
 
 ###### Step 2: Run with provided input
 
-In the Command Line, run:
+In the Command Line, make sure you are inside of the src folder and run:
 
 ```
 java RoverMain input.txt  
@@ -68,7 +68,10 @@ java RoverMain input.txt
 
 ##### Testing Script
 
-###### Step 1: Compile
+###### Step 1: Run
 
+In the Command Line, make sure you are inside the src folder and run:
 
-###### Step 2: Run
+```
+test/test-script 
+```
