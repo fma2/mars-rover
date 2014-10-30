@@ -1,4 +1,4 @@
-#!/bin/bash
+# Test driver for RoverMain.
 
 /usr/bin/javac RoverMain.java Rover.java
 
