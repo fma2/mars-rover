@@ -2,21 +2,29 @@
 public class Manager {
 	
 	Rover rover;
+	Plateau plateau;
 
-	public Manager(Rover newRover) {
+	public Manager(Rover newRover, Plateau newPlateau) {
 		rover = newRover;
+		plateau = newPlateau;
 	}
 
 	public void direct(String instructions){
-		for (char ch: instructions.toCharArray()) {
-			switch (Character.toString(ch)) {
-				case "L": rover.turnLeft();
-				case "R": rover.turnRight();
-				case "M": rover.move();
+		if (plateau.isRoverOutOfBounds(rover.position)){
+			throw new UnsupportedOperationException("Rover out of bounds!!!");
+		}
+		for (char ch: instructions.toCharArray()) {	
+			if(Character.toString(ch).equals("L")){
+				rover.turnLeft();
+			} else if(Character.toString(ch).equals("R")){
+				rover.turnRight();
+			} else if(Character.toString(ch).equals("M")){
+				rover.move();
+				if (plateau.isRoverOutOfBounds(rover.position)){
+					throw new UnsupportedOperationException("Rover out of bounds!!!");
+				}
 			}
 		}
-		//iterate over each character in instructions to see if L, R, or M
-		// not sure if need something that comes out of this...
 	}
 
 }
