@@ -1,4 +1,20 @@
 
-enum Direction {
-	North, South, East, West;
+public enum Direction {
+	NORTH {
+		
+	},
+	
+	SOUTH {
+		
+	},
+	
+	EAST {
+		
+	},
+	
+	WEST {
+		
+	},
+	
 };
+
