@@ -7,11 +7,20 @@ public class Rover {
 	
 	private Direction direction;
 	
-	public Rover(int x, int y, Direction initialDirection) {
-		this.x = x;
-		this.y = y;
+	public Rover(int xCoordinate, int yCoordinate, Direction initialDirection) {
+		this.x = xCoordinate;
+		this.y = yCoordinate;
 //		position = currentPosition;
 		this.direction = initialDirection;
 	}
+	
+	void setDirection(Direction currentDirection) {
+		direction = currentDirection;
+	}
+	
+	Direction getDirection(){
+		return direction;
+	}
+	
 
 }
