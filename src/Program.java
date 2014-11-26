@@ -43,69 +43,6 @@ public class Program {
 				
 				rover.direct(parsedInstructions);
 				
-				for (int i = 0; i < parsedInstructions.length; i++) {
-					if (parsedInstructions[i].equals("L")) {
-						switch (rover.getDirection()) {
-						case EAST: 
-							rover.setDirection(Direction.NORTH);
-							break;
-						case NORTH:
-							rover.setDirection(Direction.WEST);
-							break;
-						case SOUTH:
-							rover.setDirection(Direction.EAST);
-							break;
-						case WEST:
-							rover.setDirection(Direction.SOUTH);
-							break;
-						default:
-							break;
-							
-						}
-					} else if (parsedInstructions[i].equals("R")) {
-						switch (rover.getDirection()) {
-						case EAST: 
-							rover.setDirection(Direction.SOUTH);
-							break;
-						case NORTH:
-							rover.setDirection(Direction.EAST);
-							break;
-						case SOUTH:
-							rover.setDirection(Direction.WEST);
-							break;
-						case WEST:
-							rover.setDirection(Direction.NORTH);
-							break;
-						default:
-							break;
-						}
-					} else if (parsedInstructions[i].equals("M") && rover.getDirection().equals(Direction.NORTH) || rover.getDirection().equals(Direction.SOUTH)) {
-						y = rover.getY();
-						switch (rover.getDirection()) {
-						case SOUTH:
-							rover.setY(y-1);
-							break;
-						case NORTH:
-							rover.setY(y+1);
-							break;
-						default:
-							break;
-						}
-					} else if (parsedInstructions[i].equals("M") && rover.getDirection().equals(Direction.EAST) || rover.getDirection().equals(Direction.WEST)) {
-						x = rover.getX();
-						switch (rover.getDirection()) {
-						case WEST:
-							rover.setX(x-1);
-							break;
-						case EAST:
-							rover.setX(x+1);
-							break;
-						default:
-							break;
-						}
-					}
-
-				}
 				System.out.println(rover.getX());
 				System.out.println(rover.getY());
 				System.out.println(rover.getDirection());				
