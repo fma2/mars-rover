@@ -6,9 +6,9 @@ public class Rover {
 	private Direction direction;
 	
 	public Rover(int xCoordinate, int yCoordinate, Direction initialDirection) {
-		this.x = xCoordinate;
-		this.y = yCoordinate;
-		this.direction = initialDirection;
+		x = xCoordinate;
+		y = yCoordinate;
+		direction = initialDirection;
 	}
 	
 	void setDirection(Direction currentDirection) {
@@ -20,21 +20,22 @@ public class Rover {
 	}
 	
 	
-	void setXCoordinate(int xCoordinate) {
+	void setX(int xCoordinate) {
 		x = xCoordinate;
 	}
 	
-	int getXCoordinate() {
+	int getX() {
 		return x;
 	}
 	
-	void setYCoordinate(int yCoordinate) {
+	void setY(int yCoordinate) {
 		y = yCoordinate;
 	}
 	
-	int getYCoordinate() {
+	int getY() {
 		return y;
 	}
+
 	
 
 }
