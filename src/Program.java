@@ -40,10 +40,11 @@ public class Program {
 				
 				instructions = br.readLine();
 				parsedInstructions = instructions.split("");
+				
+				rover.direct(parsedInstructions);
+				
 				for (int i = 0; i < parsedInstructions.length; i++) {
-					
 					if (parsedInstructions[i].equals("L")) {
-//						System.out.println(parsedInstructions[i]);
 						switch (rover.getDirection()) {
 						case EAST: 
 							rover.setDirection(Direction.NORTH);
@@ -92,11 +93,9 @@ public class Program {
 						}
 					} else if (parsedInstructions[i].equals("M") && rover.getDirection().equals(Direction.EAST) || rover.getDirection().equals(Direction.WEST)) {
 						x = rover.getX();
-//						System.out.println(x-1);
 						switch (rover.getDirection()) {
 						case WEST:
 							rover.setX(x-1);
-//							System.out.println(rover.getX());
 							break;
 						case EAST:
 							rover.setX(x+1);
@@ -118,7 +117,7 @@ public class Program {
 			}
  
 		} catch (Exception e) {
-//			System.out.println(e.getMessage());
+			System.out.println(e.getMessage());
 		}
 	}
 	
