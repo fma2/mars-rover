@@ -1,16 +1,13 @@
 
 public class Rover {
 
-	private int[] position;
-//	private int x;
-//	private int y;
-	
+	private int x;
+	private int y;	
 	private Direction direction;
 	
-	public Rover(int[] currentPosition, Direction initialDirection) {
-//		this.x = xCoordinate;
-//		this.y = yCoordinate;
-		position = currentPosition;
+	public Rover(int xCoordinate, int yCoordinate, Direction initialDirection) {
+		this.x = xCoordinate;
+		this.y = yCoordinate;
 		this.direction = initialDirection;
 	}
 	
@@ -22,30 +19,22 @@ public class Rover {
 		return direction;
 	}
 	
-	void setPosition(int[] currentPosition) {
-		position = currentPosition;
+	
+	void setXCoordinate(int xCoordinate) {
+		x = xCoordinate;
 	}
 	
-	int[] getPosition(){
-		return position;
-		
+	int getXCoordinate() {
+		return x;
 	}
 	
-//	void setXCoordinate(int xCoordinate) {
-//		x = xCoordinate;
-//	}
-//	
-//	int getXCoordinate() {
-//		return x;
-//	}
-//	
-//	void setYCoordinate(int yCoordinate) {
-//		y = yCoordinate;
-//	}
-//	
-//	int getYCoordinate() {
-//		return y;
-//	}
+	void setYCoordinate(int yCoordinate) {
+		y = yCoordinate;
+	}
+	
+	int getYCoordinate() {
+		return y;
+	}
 	
 
 }
