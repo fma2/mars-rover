@@ -36,6 +36,22 @@ public class Rover {
 		return y;
 	}
 
-	
+	void direct(String[] instructions){
+//		if (plateau.isRoverOutOfBounds(rover.position)){
+//			throw new UnsupportedOperationException("Rover out of bounds!!!");
+//		}
+		for (int i=0; i < instructions.length; i++) {	
+			if(instructions[i].equals("L")){
+//				rover.turnLeft();
+			} else if(instructions[i].equals("R")){
+//				rover.turnRight();
+			} else if(instructions[i].equals("M")){
+//				rover.move();
+//				if (plateau.isRoverOutOfBounds(rover.position)){
+//					throw new UnsupportedOperationException("Rover out of bounds!!!");
+//				}
+			}
+		}
+	}
 
 }
