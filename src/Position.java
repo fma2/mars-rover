@@ -1,14 +1,3 @@
-
-//public interface Position {
-////	int[] move(int[] currentPosition);
-//	
-//	public abstract Direction turnLeft();
-//	
-////	public abstract Direction turnRight();
-//	
-//	
-//};
-
 // stores and manipulates the position of the Rover
 public class Position {
 
@@ -51,24 +40,24 @@ public class Position {
 	}
 
 	public void move() {
-		int x = getX();
-		int y = getY();
 		switch (getDirection()) {
 		case NORTH:
-			setY(y+1);
+			y++;
 			break;
 		case SOUTH:
-			setY(y-1);
+			y--;
 			break;
 		case EAST:
-			setX(x+1);
+			x++;
 			break;
 		case WEST:
-			setX(x-1);
+			x--;
 			break;
 		default:
 			break;
 		}
 	}
+	
+//	String toString
 	
 }
