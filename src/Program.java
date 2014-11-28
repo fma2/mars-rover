@@ -44,9 +44,10 @@ public class Program {
 				
 				rover.direct(rover, parsedInstructions);
 				
-				System.out.println(rover.getX());
-				System.out.println(rover.getY());
-				System.out.println(rover.getDirection());				
+//				System.out.println(rover);
+				rover.getPosition();
+//				System.out.println(rover.getY());
+//				System.out.println(rover.getDirection());				
 				
 //				
 //				new Manager(rover, plateau).direct(br.readLine());
