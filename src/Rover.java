@@ -4,8 +4,10 @@ public class Rover {
 	private int x;
 	private int y;	
 	private Direction direction;
+	private Position position;
 	
 	public Rover(int xCoordinate, int yCoordinate, Direction initialDirection) {
+//		this.position = new Position(xCoordinate, yCoordinate, initialDirection); 
 		x = xCoordinate;
 		y = yCoordinate;
 		direction = initialDirection;
@@ -36,28 +38,13 @@ public class Rover {
 		return y;
 	}
 
-	void direct(String[] instructions){
+	void direct(Rover rover, String[] instructions){
 //		if (plateau.isRoverOutOfBounds(rover.position)){
 //			throw new UnsupportedOperationException("Rover out of bounds!!!");
 //		}
 		for (int i=0; i < instructions.length; i++) {	
 			if(instructions[i].equals("L")){
-				switch (getDirection()) {
-				case EAST: 
-					setDirection(Direction.NORTH);
-					break;
-				case NORTH:
-					setDirection(Direction.WEST);
-					break;
-				case SOUTH:
-					setDirection(Direction.EAST);
-					break;
-				case WEST:
-					setDirection(Direction.SOUTH);
-					break;
-				default:
-					break;
-				}
+				Position.turnLeft(rover);
 			} else if(instructions[i].equals("R")){
 //				rover.turnRight();
 				switch (getDirection()) {
