@@ -7,7 +7,7 @@ public class Rover {
 		this.position = new Position(xCoordinate, yCoordinate, initialDirection); 
 	}
 
-	void direct(Rover rover, String[] instructions){
+	void direct(String[] instructions){
 //		if (plateau.isRoverOutOfBounds(rover.position)){
 //			throw new UnsupportedOperationException("Rover out of bounds!!!");
 //		}
