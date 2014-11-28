@@ -23,7 +23,7 @@ public class Program {
  
 			String sCurrentLine;
 			
-			plateauCoordinates = convertString(br.readLine());
+			plateauCoordinates = convertStringToArray(br.readLine());
 //			plateau = new Plateau(plateauCoordinates);
 			
 			while ((sCurrentLine = br.readLine()) != null) {						
@@ -42,7 +42,6 @@ public class Program {
 				parsedInstructions = instructions.split("");
 				
 				rover.direct(parsedInstructions);
-				
 				rover.getPosition();				
 				
 			}
@@ -52,7 +51,7 @@ public class Program {
 		}
 	}
 	
-	static int[] convertString(String str) {
+	static int[] convertStringToArray(String str) {
 		String[] items = str.split(" ");
 
 		int[] results = new int[items.length];
