@@ -36,12 +36,13 @@ public class Program {
 				xCoordinate = Integer.valueOf(parts[0]);
 				yCoordinate = Integer.valueOf(parts[1]);
 				direction = fromStringToDirection(parts[2]);
+				
 				rover = new Rover(xCoordinate, yCoordinate, direction);
 				
 				instructions = br.readLine();
 				parsedInstructions = instructions.split("");
 				
-				rover.direct(parsedInstructions);
+				rover.direct(rover, parsedInstructions);
 				
 				System.out.println(rover.getX());
 				System.out.println(rover.getY());
