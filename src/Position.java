@@ -9,7 +9,7 @@
 //	
 //};
 
-// stores and manipulates the position of the rover
+// stores and manipulates the position of the Rover
 public class Position {
 
 	private int x;
@@ -55,7 +55,7 @@ public class Position {
 		int y = getY();
 		switch (getDirection()) {
 		case NORTH:
-			y++;
+			setY(y+1);
 			break;
 		case SOUTH:
 			setY(y-1);
