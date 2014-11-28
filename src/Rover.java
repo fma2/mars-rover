@@ -47,34 +47,34 @@ public class Rover {
 				Position.turnLeft(rover);
 			} else if(instructions[i].equals("R")){
 				Position.turnRight(rover);
-			} else if(instructions[i].equals("M") && getDirection().equals(Direction.NORTH) || getDirection().equals(Direction.SOUTH)){
-					y = getY();
-					switch (getDirection()) {
-					case SOUTH:
-						setY(y-1);
-						break;
-					case NORTH:
-						setY(y+1);
-						break;
-					default:
-						break;
-					}
-			} else if (instructions[i].equals("M") && getDirection().equals(Direction.EAST) || getDirection().equals(Direction.WEST)) {
-				x = getX();
-				switch (getDirection()) {
-				case WEST:
-					setX(x-1);
-					break;
-				case EAST:
-					setX(x+1);
-					break;
-				default:
-					break;
-				}
-//				rover.move();
-//				if (plateau.isRoverOutOfBounds(rover.position)){
-//					throw new UnsupportedOperationException("Rover out of bounds!!!");
+			} else if(instructions[i].equals("M")) {//&& getDirection().equals(Direction.NORTH) || getDirection().equals(Direction.SOUTH)){
+				Position.move(rover);
+//				
+//				switch (getDirection()) {
+//				case SOUTH:
+//					setY(y-1);
+//					break;
+//				case NORTH:
+//					setY(y+1);
+//					break;
+//				default:
+//					break;
 //				}
+//			} else if (instructions[i].equals("M") && getDirection().equals(Direction.EAST) || getDirection().equals(Direction.WEST)) {
+//				switch (getDirection()) {
+//				case WEST:
+//					setX(x-1);
+//					break;
+//				case EAST:
+//					setX(x+1);
+//					break;
+//				default:
+//					break;
+//				}
+////				rover.move();
+////				if (plateau.isRoverOutOfBounds(rover.position)){
+////					throw new UnsupportedOperationException("Rover out of bounds!!!");
+////				}
 			}
 		}
 	}
