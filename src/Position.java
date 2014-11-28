@@ -58,5 +58,33 @@ public class Position {
 			break;
 		}
 	}
+
+	public static void move(Rover rover) {
+		int x = rover.getX();
+		int y = rover.getY();
+		if (rover.getDirection().equals(Direction.NORTH) || rover.getDirection().equals(Direction.SOUTH)) {
+			switch (rover.getDirection()) {
+			case SOUTH:
+				rover.setY(y-1);
+				break;
+			case NORTH:
+				rover.setY(y+1);
+				break;
+			default:
+				break;
+			}
+		} else if (rover.getDirection().equals(Direction.EAST) || rover.getDirection().equals(Direction.WEST)){
+			switch (rover.getDirection()) {
+			case WEST:
+				rover.setX(x-1);
+				break;
+			case EAST:
+				rover.setX(x+1);
+				break;
+			default:
+				break;
+			}
+		}
+	}
 	
 }
