@@ -20,6 +20,7 @@ public class Program {
 		
 		try (BufferedReader br = new BufferedReader(new FileReader(inputFileName)))
 		{
+ 
 			String sCurrentLine;
 			
 			plateauCoordinates = convertString(br.readLine());
