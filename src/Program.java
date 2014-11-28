@@ -41,7 +41,7 @@ public class Program {
 				instructions = br.readLine();
 				parsedInstructions = instructions.split("");
 				
-				rover.direct(rover, parsedInstructions);
+				rover.direct(parsedInstructions);
 				
 				rover.getPosition();				
 				
