@@ -8,6 +8,10 @@ public enum Direction {
 		public Direction right() {
 			return EAST;
 		}
+		
+		public String toString() {
+			return "N";
+		}
 	},
 	
 	SOUTH {
@@ -17,6 +21,10 @@ public enum Direction {
 		
 		public Direction right() {
 			return WEST;
+		}
+		
+		public String toString() {
+			return "S";
 		}
 		
 	},
@@ -29,6 +37,10 @@ public enum Direction {
 		public Direction right() {
 			return SOUTH;
 		}
+		
+		public String toString() {
+			return "E";
+		}
 	},
 	
 	WEST {
@@ -39,10 +51,16 @@ public enum Direction {
 		public Direction right() {
 			return NORTH;
 		}
+		
+		public String toString() {
+			return "W";
+		}
 	},;
 	
 	public abstract Direction left();
 	public abstract Direction right();
+	@Override
+	public abstract String toString();
 
 };
 
