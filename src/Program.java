@@ -4,15 +4,14 @@ public class Program {
 
 	public static void main(String[] args) {
 		String inputFileName = "src/input.txt";
-	
+
 		int[] plateauCoordinates;
 //		Plateau plateau;
 		
 		String roverPosition;
 		int xCoordinate;
 		int yCoordinate;
-		int x; //for instructions reading
-		int y; //for instructions reading
+
 		Direction direction;
 		Rover rover;
 		
@@ -21,7 +20,6 @@ public class Program {
 		
 		try (BufferedReader br = new BufferedReader(new FileReader(inputFileName)))
 		{
- 
 			String sCurrentLine;
 			
 			plateauCoordinates = convertString(br.readLine());
@@ -44,14 +42,7 @@ public class Program {
 				
 				rover.direct(rover, parsedInstructions);
 				
-//				System.out.println(rover);
-				rover.getPosition();
-//				System.out.println(rover.getY());
-//				System.out.println(rover.getDirection());				
-				
-//				
-//				new Manager(rover, plateau).direct(br.readLine());
-//				rover.printStatus();
+				rover.getPosition();				
 				
 			}
  
