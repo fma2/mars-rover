@@ -40,4 +40,23 @@ public class Position {
 		}
 	}
 	
+	public static void turnRight(Rover rover) {
+		switch (rover.getDirection()) {
+		case EAST: 
+			rover.setDirection(Direction.SOUTH);
+			break;
+		case NORTH:
+			rover.setDirection(Direction.EAST);
+			break;
+		case SOUTH:
+			rover.setDirection(Direction.WEST);
+			break;
+		case WEST:
+			rover.setDirection(Direction.NORTH);
+			break;
+		default:
+			break;
+		}
+	}
+	
 }
