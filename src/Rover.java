@@ -46,23 +46,7 @@ public class Rover {
 			if(instructions[i].equals("L")){
 				Position.turnLeft(rover);
 			} else if(instructions[i].equals("R")){
-//				rover.turnRight();
-				switch (getDirection()) {
-				case EAST: 
-					setDirection(Direction.SOUTH);
-					break;
-				case NORTH:
-					setDirection(Direction.EAST);
-					break;
-				case SOUTH:
-					setDirection(Direction.WEST);
-					break;
-				case WEST:
-					setDirection(Direction.NORTH);
-					break;
-				default:
-					break;
-				}
+				Position.turnRight(rover);
 			} else if(instructions[i].equals("M") && getDirection().equals(Direction.NORTH) || getDirection().equals(Direction.SOUTH)){
 					y = getY();
 					switch (getDirection()) {
