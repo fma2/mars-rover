@@ -1,5 +1,5 @@
 package main;
-//Direction enum - maybe need to add to a Position interface to hide implementation
+//Direction enum
 //Each constant has methods: left(), right(), toString()
 //Abstract methods included at bottom of page
 
@@ -66,7 +66,7 @@ public enum Direction {
 	@Override
 	public abstract String toString();
 	
-	static Direction fromStringToDirection(String directionStr){
+	public static Direction fromStringToDirection(String directionStr){
 		Direction direction = null;
 		if (directionStr.equals("N")) {
 			direction = Direction.NORTH;
