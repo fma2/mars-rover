@@ -10,10 +10,10 @@ public class Rover {
 	}
 
 	//Takes string of instructions input and parses to move the the rover
-	public void direct(String[] instructions){
-//		if (plateau.isRoverOutOfBounds(rover.position)){
-//			throw new UnsupportedOperationException("Rover out of bounds!!!");
-//		}
+	public void direct(String[] instructions, Plateau plateau){ // added plateau args for exception handling - is that okay??
+		if (plateau.isRoverOutOfBounds(position)){
+			throw new UnsupportedOperationException("Rover out of bounds!!!");
+		}
 		for (int i=0; i < instructions.length; i++) {	
 			if(instructions[i].equals("L")){
 				position.setDirectionLeft();
@@ -21,6 +21,9 @@ public class Rover {
 				position.setDirectionRight();
 			} else if(instructions[i].equals("M")) {
 				position.move();
+				if (plateau.isRoverOutOfBounds(position)){
+					throw new UnsupportedOperationException("Rover out of bounds!!!");
+				}
 			}
 		}
 	}
