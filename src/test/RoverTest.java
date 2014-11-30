@@ -41,13 +41,6 @@ public class RoverTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
-	@Test // probably don't need
-	public void testNewRoverisInstanceofRoverClass() {
-//		Rover rover2 = new Rover(1,2,Direction.NORTH);
-//		assertEquals(rover,rover);
-		assertThat(rover, instanceOf(Rover.class));
-	}
 	
 	@Test
 	public void testRoverHasPosition() {
