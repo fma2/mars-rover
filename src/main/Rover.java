@@ -10,7 +10,7 @@ public class Rover {
 	}
 
 	//Takes string of instructions input and parses to move the the rover
-	void direct(String[] instructions){
+	public void direct(String[] instructions){
 //		if (plateau.isRoverOutOfBounds(rover.position)){
 //			throw new UnsupportedOperationException("Rover out of bounds!!!");
 //		}
@@ -26,7 +26,11 @@ public class Rover {
 	}
 	
 	//Get information on the position of the rover
-	public void getPosition(){
+	public Position getPosition(){
+		return position;
+	}
+	
+	public void printPosition() {
 		System.out.print(position.getX());
 		System.out.print(" ");
 		
@@ -34,6 +38,6 @@ public class Rover {
 		System.out.print(" ");
 		
 		System.out.print(position.getDirection());
-		System.out.println(" ");	
+		System.out.println(" ");
 	}
 }
