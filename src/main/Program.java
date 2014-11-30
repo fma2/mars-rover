@@ -6,9 +6,10 @@ public class Program {
 	public static void main(String[] args) {
 		String inputFileName = "src/input.txt";
 		
-//		if (args.length == 1) {
-//			inputFileName = args[0];
-//		}
+		// When running other input files besides default
+		if (args.length == 1) {
+			inputFileName = args[0];
+		}
 		
 		Plateau plateau;
 		Rover rover;
@@ -19,7 +20,7 @@ public class Program {
 			String sCurrentLine;
 			
 			int[] plateauCoordinates = Plateau.convertStringToIntArray(br.readLine());
-			plateau = new Plateau(plateauCoordinates);
+			plateau = new Plateau(plateauCoordinates[0], plateauCoordinates[1]);
 			
 			while ((sCurrentLine = br.readLine()) != null) {						
 				String roverPosition = sCurrentLine;
