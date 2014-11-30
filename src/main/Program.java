@@ -1,12 +1,14 @@
 package main;
 import java.io.*;
-// Runs program to take starting position of rover and move rover on plateau
+
+// The Program class contains the main method to run the program. 
+// It uses the input.txt file to create the plateau and rovers and move each rover.  
 public class Program {
 
 	public static void main(String[] args) {
 		String inputFileName = "src/input.txt";
 		
-		// When running other input files besides default
+		// When running other input files besides default - input.txt
 		if (args.length == 1) {
 			inputFileName = args[0];
 		}
@@ -25,6 +27,7 @@ public class Program {
 			while ((sCurrentLine = br.readLine()) != null) {						
 				String roverPosition = sCurrentLine;
 				String[] parts = roverPosition.split(" ");
+
 				if (parts.length != 3){
 					throw new UnsupportedOperationException("Invalid input!");
 				}

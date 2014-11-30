@@ -1,5 +1,5 @@
 package main;
-// Stores and manipulates the position of the Rover -- maybe should be called from position interface??
+// The Position class stores and manipulates the position of the Rover
 public class Position {
 
 	private int x;
@@ -12,10 +12,12 @@ public class Position {
 		this.direction = direction;
 	}
 	
+	// Sets the direction of the rover to turn right from the current direction
 	public void setDirectionRight(){
 		direction = direction.right();
 	}
 	
+	// Sets the direction of the rover to turn left from the current direction
 	public void setDirectionLeft() {
 		direction = direction.left();
 	}
@@ -40,6 +42,7 @@ public class Position {
 		return y;
 	}
 
+	// Moves the rover along x or y depending on its current direction
 	public void move() {
 		switch (getDirection()) {
 		case NORTH:

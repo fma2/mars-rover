@@ -1,7 +1,6 @@
 package main;
-//Direction enum
-//Each constant has methods: left(), right(), toString()
-//Abstract methods included at bottom of page
+// The Direction enum contains direction constants.
+// Each constant has methods, left(), right(), toString().
 
 public enum Direction {
 	NORTH {
@@ -66,6 +65,7 @@ public enum Direction {
 	@Override
 	public abstract String toString();
 	
+	// Turns string provided by input to a Direction constant
 	public static Direction fromStringToDirection(String directionStr){
 		Direction direction = null;
 		if (directionStr.equals("N")) {

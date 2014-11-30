@@ -1,5 +1,6 @@
 package main;
 
+// The Plateau object with x and y fields;
 public class Plateau {
 
 	private int x;
@@ -26,6 +27,7 @@ public class Plateau {
 		return y;
 	}
 	
+	// Converts the string provided by input into an array of integers
 	public static int[] convertStringToIntArray(String str) {
 		String[] items = str.split(" ");
 
@@ -39,6 +41,7 @@ public class Plateau {
 		return results;
 	}
 	
+	// Checks if rover is out of bounds of the plateau
 	public boolean isRoverOutOfBounds(Position roverPosition){
 		if (roverPosition.getX() > getX()) {
 			return true;

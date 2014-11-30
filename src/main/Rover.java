@@ -1,16 +1,16 @@
 package main;
-//Rover object with position field
+
+// The Rover object with a position field
 public class Rover {
 
 	private Position position;
 	
-	//Rover constructor
 	public Rover(int xCoordinate, int yCoordinate, Direction initialDirection) {
 		this.position = new Position(xCoordinate, yCoordinate, initialDirection); 
 	}
 
-	//Takes string of instructions input and parses to move the the rover
-	public void direct(String[] instructions, Plateau plateau){ // added plateau args for exception handling - is that okay??
+	// Takes string of instructions input and parses to move the the rover
+	public void direct(String[] instructions, Plateau plateau){
 		if (plateau.isRoverOutOfBounds(position)){
 			throw new UnsupportedOperationException("Rover out of bounds!!!");
 		}
@@ -28,11 +28,12 @@ public class Rover {
 		}
 	}
 	
-	//Get information on the position of the rover
+	// Get information on the position of the rover
 	public Position getPosition(){
 		return position;
 	}
 	
+	// Print the rover's position to the console
 	public void printPosition() {
 		System.out.print(position.getX());
 		System.out.print(" ");
