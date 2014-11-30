@@ -1,14 +1,13 @@
 package test;
 
 import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.instanceOf;
-import static org.junit.Assert.assertThat;
 import static org.hamcrest.CoreMatchers.*;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import main.Position;
@@ -21,25 +20,19 @@ public class RoverTest {
 	Rover rover;
 	Rover rover2;
 	Position position;
-	
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-		
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
+	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
 	@Before
 	public void setUp() throws Exception {
 		rover = new Rover(1,2,Direction.NORTH);
 		rover2 = new Rover(3,3, Direction.NORTH);
 		position = rover.getPosition();
+		System.setOut(new PrintStream(outContent));
 	}
 
 	@After
 	public void tearDown() throws Exception {
+		
 	}
 	
 	@Test
@@ -61,5 +54,10 @@ public class RoverTest {
 		assertThat(beforeDirectXCoordinate, is(not(afterDirectPosition.getX())));
 	}
 	
+	@Test
+	public void testPrintPosition(){
+		rover2.printPosition();
+		assertThat("3 3 N", is(outContent.toString().trim()));
+	}
 
 }
