@@ -35,7 +35,7 @@ public class Program {
 //				}
 				xCoordinate = Integer.valueOf(parts[0]);
 				yCoordinate = Integer.valueOf(parts[1]);
-				direction = fromStringToDirection(parts[2]);
+				direction = Direction.fromStringToDirection(parts[2]);
 				
 				rover = new Rover(xCoordinate, yCoordinate, direction);
 				
@@ -64,18 +64,6 @@ public class Program {
 		return results;
 	}
 	
-	static Direction fromStringToDirection(String directionStr){
-		Direction direction = null;
-		if (directionStr.equals("N")) {
-			direction = Direction.NORTH;
-		} else if (directionStr.equals("S")) {
-			direction = Direction.SOUTH;
-		} else if (directionStr.equals("E")) {
-			direction = Direction.EAST;
-		} else if (directionStr.equals("W")) {
-			direction = Direction.WEST;
-		}
-		return direction;
-	}
+	
 
 }
