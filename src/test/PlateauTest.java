@@ -1,6 +1,8 @@
 package test;
 
 import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
+import main.Plateau;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -9,6 +11,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class PlateauTest {
+
+	private String coordinates;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -20,6 +24,7 @@ public class PlateauTest {
 
 	@Before
 	public void setUp() throws Exception {
+		coordinates = "5 5";
 	}
 
 	@After
@@ -27,8 +32,11 @@ public class PlateauTest {
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testConvertStringToIntArray() {
+		int[] coordinatesArr = Plateau.convertStringToIntArray(coordinates);
+		int[] expectedArr = {5, 5};
+		assertThat(coordinatesArr, is(expectedArr));
 	}
+	
 
 }
