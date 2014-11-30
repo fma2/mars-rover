@@ -34,7 +34,7 @@ public class Program {
 				
 				instructions = br.readLine().split("");
 				
-				rover.direct(instructions);
+				rover.direct(instructions, plateau);
 				rover.printPosition();					
 			}
 		} catch (Exception e) {
