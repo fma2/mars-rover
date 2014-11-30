@@ -16,7 +16,7 @@ public class Program {
 		Direction direction;
 		Rover rover;
 		
-		String instructions;
+		String[] instructions;
 		String[] parsedInstructions;
 		
 		try (BufferedReader br = new BufferedReader(new FileReader(inputFileName)))
@@ -24,7 +24,7 @@ public class Program {
  
 			String sCurrentLine;
 			
-			plateauCoordinates = convertStringToArray(br.readLine());
+			plateauCoordinates = convertStringToIntArray(br.readLine());
 			plateau = new Plateau(plateauCoordinates);
 			
 			while ((sCurrentLine = br.readLine()) != null) {						
@@ -39,11 +39,10 @@ public class Program {
 				
 				rover = new Rover(xCoordinate, yCoordinate, direction);
 				
-				instructions = br.readLine();
-				parsedInstructions = instructions.split("");
+				instructions = br.readLine().split("");
 				
-				rover.direct(parsedInstructions);
-				rover.getPosition();				
+				rover.direct(instructions);
+				rover.printPosition();				
 				
 			}
  
@@ -52,7 +51,7 @@ public class Program {
 		}
 	}
 	
-	static int[] convertStringToArray(String str) {
+	static int[] convertStringToIntArray(String str) {
 		String[] items = str.split(" ");
 
 		int[] results = new int[items.length];
