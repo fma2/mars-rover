@@ -2,10 +2,28 @@ package main;
 
 public class Plateau {
 
-	private static int[] plateauCoordinates;
+	private int x;
+	private int y;
 
-	public Plateau (int[] coordinates){
-		plateauCoordinates = coordinates;
+	public Plateau (int xCoordinate, int yCoordinate){
+		this.x = xCoordinate;
+		this.y = yCoordinate;
+	}
+	
+	public void setX(int xCoordinate) {
+		x = xCoordinate;
+	}
+
+	public int getX() {
+		return x;
+	}
+	
+	public void setY(int yCoordinate) {
+		y = yCoordinate;
+	}
+
+	public int getY() {
+		return y;
 	}
 	
 	public static int[] convertStringToIntArray(String str) {
@@ -22,11 +40,11 @@ public class Plateau {
 	}
 	
 	public boolean isRoverOutOfBounds(Position roverPosition){
-		if (roverPosition.getX() > plateauCoordinates[0]) {
+		if (roverPosition.getX() > getX()) {
 			return true;
 		}
 		
-		if (roverPosition.getY() > plateauCoordinates[1]) {
+		if (roverPosition.getY() > getY()) {
 			return true;
 		}
 		
