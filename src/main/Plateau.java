@@ -8,7 +8,7 @@ public class Plateau {
 		plateauCoordinates = coordinates;
 	}
 	
-	static int[] convertStringToIntArray(String str) {
+	public static int[] convertStringToIntArray(String str) {
 		String[] items = str.split(" ");
 
 		int[] results = new int[items.length];
