@@ -17,7 +17,7 @@ public class Position {
 		direction = direction.right();
 	}
 	
-	void setDirectionLeft() {
+	public void setDirectionLeft() {
 		direction = direction.left();
 	}
 	
@@ -41,7 +41,7 @@ public class Position {
 		return y;
 	}
 
-	void move() {
+	public void move() {
 		switch (getDirection()) {
 		case NORTH:
 			y++;
