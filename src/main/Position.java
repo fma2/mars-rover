@@ -1,6 +1,5 @@
 package main;
 // Stores and manipulates the position of the Rover -- maybe should be called from position interface??
-// 
 public class Position {
 
 	private int x;
@@ -59,6 +58,4 @@ public class Position {
 			break;
 		}
 	}
-	
-	
 }
