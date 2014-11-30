@@ -24,15 +24,15 @@ public class Program {
  
 			String sCurrentLine;
 			
-			plateauCoordinates = convertStringToIntArray(br.readLine());
+			plateauCoordinates = Plateau.convertStringToIntArray(br.readLine());
 			plateau = new Plateau(plateauCoordinates);
 			
 			while ((sCurrentLine = br.readLine()) != null) {						
 				roverPosition = sCurrentLine;
 				String[] parts = roverPosition.split(" ");
-//				if (parts.length != 3){
-//					throw new UnsupportedOperationException("Invalid input!");
-//				}
+				if (parts.length != 3){
+					throw new UnsupportedOperationException("Invalid input!");
+				}
 				xCoordinate = Integer.valueOf(parts[0]);
 				yCoordinate = Integer.valueOf(parts[1]);
 				direction = Direction.fromStringToDirection(parts[2]);
@@ -51,19 +51,4 @@ public class Program {
 		}
 	}
 	
-	static int[] convertStringToIntArray(String str) {
-		String[] items = str.split(" ");
-
-		int[] results = new int[items.length];
-	
-		for (int i = 0; i < items.length; i++) {
-		    try {
-		        results[i] = Integer.parseInt(items[i]);
-		    } catch (NumberFormatException nfe) {};
-		}
-		return results;
-	}
-	
-	
-
 }
