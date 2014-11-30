@@ -65,6 +65,19 @@ public enum Direction {
 	public abstract Direction right();
 	@Override
 	public abstract String toString();
-
+	
+	static Direction fromStringToDirection(String directionStr){
+		Direction direction = null;
+		if (directionStr.equals("N")) {
+			direction = Direction.NORTH;
+		} else if (directionStr.equals("S")) {
+			direction = Direction.SOUTH;
+		} else if (directionStr.equals("E")) {
+			direction = Direction.EAST;
+		} else if (directionStr.equals("W")) {
+			direction = Direction.WEST;
+		}
+		return direction;
+	}
 };
 
