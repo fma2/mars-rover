@@ -6,7 +6,6 @@ import static org.hamcrest.CoreMatchers.*;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -28,11 +27,6 @@ public class RoverTest {
 		rover2 = new Rover(3,3, Direction.NORTH);
 		position = rover.getPosition();
 		System.setOut(new PrintStream(outContent));
-	}
-
-	@After
-	public void tearDown() throws Exception {
-		
 	}
 	
 	@Test
