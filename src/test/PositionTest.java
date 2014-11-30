@@ -37,19 +37,19 @@ public class PositionTest {
 	}
 
 	@Test
-	public void testMoveChangesXCoordinateByOneWhenDirectionIsEast(){
+	public void testMoveIncreasesXCoordinateByOneWhenDirectionIsEast(){
 		int xCoordinate = position.getX();
 		position.move();
 		int newXCoordinate = position.getX();
-		assertThat(newXCoordinate - 1, is((xCoordinate)));
+		assertTrue("New X Coordinate("+newXCoordinate+") should be greater than previous ("+xCoordinate+")", newXCoordinate > xCoordinate);
 	}
 	
 	@Test
-	public void testMoveChangesYCoordinateByOneWhenDirectionIsNorth(){
+	public void testMoveIncreasesYCoordinateByOneWhenDirectionIsNorth(){
 		int yCoordinate = position2.getY();
 		position2.move();
 		int newYCoordinate = position2.getY();
-		assertThat(newYCoordinate - 1, is((yCoordinate)));
+		assertTrue("New Y Coordinate("+newYCoordinate+") should be greater than previous ("+yCoordinate+")", newYCoordinate > yCoordinate);
 	}
 	
 	@Test
