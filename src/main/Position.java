@@ -13,7 +13,7 @@ public class Position {
 		this.direction = direction;
 	}
 	
-	void setDirectionRight(){
+	public void setDirectionRight(){
 		direction = direction.right();
 	}
 	
@@ -21,23 +21,23 @@ public class Position {
 		direction = direction.left();
 	}
 	
-	Direction getDirection() {
+	public Direction getDirection() {
 		return direction;
 	}
 	
-	void setX(int xCoordinate) {
+	public void setX(int xCoordinate) {
 		x = xCoordinate;
 	}
 
-	int getX() {
+	public int getX() {
 		return x;
 	}
 
-	void setY(int yCoordinate) {
+	public void setY(int yCoordinate) {
 		y = yCoordinate;
 	}
 
-	int getY() {
+	public int getY() {
 		return y;
 	}
 
