@@ -1,10 +1,6 @@
 package test;
 
 import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -14,37 +10,26 @@ import main.Position;
 import main.Rover;
 import main.Direction;
 
-
 public class RoverTest {
 	
 	Rover rover1;
 	Rover rover2;
-	Position position;
 	Plateau plateau1;
 	Plateau plateau2;
 	Plateau plateau3;
-	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-
+	
 	@Before
 	public void setUp() throws Exception {
 		rover1 = new Rover(1,2,Direction.NORTH);
 		rover2 = new Rover(3,3, Direction.NORTH);
-		position = rover1.getPosition();
 		plateau1 = new Plateau(5,5);
 		plateau2 = new Plateau(10, 10);
 		plateau3 = new Plateau(20,20);
-		System.setOut(new PrintStream(outContent));
 	}
 	
 	@Test
 	public void testRoverHasPosition() {
 		assertNotNull(rover1.getPosition());
-	}
-	
-	@Test
-	public void testGetPositionReturnsCurrentPosition() {
-		Position currentPosition = position;
-		assertEquals(rover1.getPosition(), currentPosition);
 	}
 	
 	@Test
@@ -54,12 +39,6 @@ public class RoverTest {
 		rover1.direct(instructions, plateau1);
 		Position afterDirectPosition = rover1.getPosition();
 		assertNotSame(afterDirectPosition.getX(), beforeDirectXCoordinate);
-	}
-	
-	@Test
-	public void testPrintPosition(){
-		rover2.printPosition();
-		assertThat(outContent.toString().trim(), is("3 3 N"));
 	}
 	
 	@Test(expected=UnsupportedOperationException.class)
@@ -78,8 +57,8 @@ public class RoverTest {
 		Rover rover4 = new Rover(8, 1, Direction.EAST);
 		String[] instructions = "LMLMLMLMRM".split(""); 
 		rover4.direct(instructions, plateau2);
-		rover4.printPosition();
-		assertThat(outContent.toString().trim(), is("8 0 S"));
+		Position position4 = new Position(8,0,Direction.SOUTH);
+		assertTrue("End coordinates are not as expected", arePositionObjectsEqual(rover4.getPosition(), position4));
 	}
 	
 	@Test
@@ -87,8 +66,8 @@ public class RoverTest {
 		Rover rover5 = new Rover(3, 5, Direction.NORTH);
 		String[] instructions = "MMRMMRMRRM".split("");
 		rover5.direct(instructions, plateau2);
-		rover5.printPosition();
-		assertThat(outContent.toString().trim(), is("5 7 N"));
+		Position position5 = new Position(5,7,Direction.NORTH);
+		assertTrue("End coordinates are not as expected", arePositionObjectsEqual(rover5.getPosition(), position5));
 	}
 	
 	@Test
@@ -96,8 +75,8 @@ public class RoverTest {
 		Rover rover6 = new Rover(10, 13, Direction.EAST);
 		String[] instructions = "LMLMLMLMRM".split("");
 		rover6.direct(instructions, plateau3);
-		rover6.printPosition();
-		assertThat(outContent.toString().trim(), is("10 12 S"));
+		Position position6 = new Position(10,12,Direction.SOUTH);
+		assertTrue("End coordinates are not as expected", arePositionObjectsEqual(rover6.getPosition(), position6));
 	}
 	
 	@Test
@@ -105,7 +84,13 @@ public class RoverTest {
 		Rover rover7 = new Rover(13, 15, Direction.SOUTH);
 		String[] instructions = "MMRMMRMRRM".split("");
 		rover7.direct(instructions, plateau3);
-		rover7.printPosition();
-		assertThat(outContent.toString().trim(), is("11 13 S"));
+		Position position7 = new Position(11,13, Direction.SOUTH);
+		assertTrue("End coordinates are not as expected", arePositionObjectsEqual(rover7.getPosition(), position7));
+	}
+	
+	public boolean arePositionObjectsEqual(Position position1, Position position2) {
+		if (position1.getX() == position2.getX() && position1.getY() == position2.getY() && position1.getDirection() == position2.getDirection()){
+			return true;
+		} else return false;
 	}
 }
