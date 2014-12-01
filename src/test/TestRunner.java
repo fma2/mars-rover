@@ -13,7 +13,7 @@ public class TestRunner {
          System.out.println("Failed test: "+failure.toString()+"");
       }
       System.out.println("=======================");
-      System.out.println("All tests were successful?: "+result.wasSuccessful()+"");
+      System.out.println("All tests successful?: "+result.wasSuccessful()+"");
    }
 
 } 
