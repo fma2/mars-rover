@@ -85,11 +85,11 @@ java main.Program input.txt
 
 ###### Step 1: Download JUNIT
 
-For this application, JUnit was used for testing.  In order to run the tests, you will need to download [junit.jar](https://github.com/junit-team/junit/wiki/Download-and-Install) and [hamcrest-core.jar](https://github.com/junit-team/junit/wiki/Download-and-Install), if you do not have them already. 
+For this application, JUnit was used for testing.  In order to run the tests from the command line, you will need to download [junit.jar](https://github.com/junit-team/junit/wiki/Download-and-Install) and [hamcrest-core.jar](https://github.com/junit-team/junit/wiki/Download-and-Install), if you do not have them already. 
 
 ###### Step 2: Set JUNIT environment
 
-Assuming you have stored the jar files in a JUNIT folder, in the command line, open the src directory and run:
+Assuming you have stored the jar files in a JUNIT folder, open the src directory and run the following in the command line:
 
 ```
 export JUNIT_HOME=/Library/JUNIT
@@ -98,7 +98,7 @@ Reference: [http://www.tutorialspoint.com/junit/junit_environment_setup.htm](htt
 
 ###### Step 3: Set CLASSPATH variable
 
-Assuming you have stored the jar files in a JUNIT folder and downloaded junit-4.11.jar and hamcrest-core-1.3.jar, set the CLASSPATH variable to point to the JUNIT jars location.
+Assuming you d ownloaded junit-4.11.jar and hamcrest-core-1.3.jar and have stored these files in a JUNIT folder, set the CLASSPATH variable to point to the JUNIT jars location.
 
 ```
 export CLASSPATH=$CLASSPATH:$JUNIT_HOME/junit-4.11.jar:$JUNIT_HOME/hamcrest-core-1.3.jar
@@ -115,7 +115,7 @@ javac test/DirectionTest.java test/PlateauTest.java test/PositionTest.java test/
 
 ###### Step 5: Run Tests
 
-Again, make sure you are in the src directory, and run the following in the command line:
+From the src directory, run the following in the command line:
 
 ```
 java test.TestRunner
@@ -139,7 +139,7 @@ Reference: [http://www.tutorialspoint.com/junit/junit_environment_setup.htm](htt
 
 ###### Step 3: Set CLASSPATH variable
 
-Assuming you have stored the jar files in a JUNIT folder and downloaded junit-4.11.jar and hamcrest-core-1.3.jar, set the CLASSPATH variable to point to the JUNIT jars location.
+Assuming you downloaded junit-4.11.jar and hamcrest-core-1.3.jar and have stored these files in a JUNIT folder, set the CLASSPATH variable to point to the JUNIT jars location.
 
 ```
 export CLASSPATH=$CLASSPATH:$JUNIT_HOME/junit-4.11.jar:$JUNIT_HOME/hamcrest-core-1.3.jar
@@ -149,15 +149,15 @@ Reference: [http://www.tutorialspoint.com/junit/junit_environment_setup.htm](htt
 
 ###### Step 4: Compile 
 
-Make sure you are in the src directory, and run the following in the command line:
+From the src directory, run the following in the command line:
 
 ```
 javac test/DirectionTest.java test/PlateauTest.java test/PositionTest.java test/RoverTest.java test/AllTests.java test/TestRunner.java main/Direction.java main/Plateau.java main/Position.java main/Program.java main/Rover.java
 ```
 
-###### Step 5: Run Application
+###### Step 5: Run Application with provided input
 
-Again, make sure you are in the src directory, and run the following in the command line:
+From the src directory, run the following in the command line:
 
 ```
 java main.Program input.txt
