@@ -104,6 +104,8 @@ Assuming you have stored the jar files in a JUNIT folder and downloaded junit-4.
 ```
 export CLASSPATH=$CLASSPATH:$JUNIT_HOME/junit-4.11.jar:$JUNIT_HOME/hamcrest-core-1.3.jar
 ```
+Reference: [http://www.tutorialspoint.com/junit/junit_environment_setup.htm](http://www.tutorialspoint.com/junit/junit_environment_setup.htm)
+
 ###### Step 4: Compile 
 
 Make sure you are in the src directory, and run the following in the command line:
@@ -143,6 +145,8 @@ Assuming you have stored the jar files in a JUNIT folder and downloaded junit-4.
 ```
 export CLASSPATH=$CLASSPATH:$JUNIT_HOME/junit-4.11.jar:$JUNIT_HOME/hamcrest-core-1.3.jar
 ```
+
+Reference: [http://www.tutorialspoint.com/junit/junit_environment_setup.htm](http://www.tutorialspoint.com/junit/junit_environment_setup.htm)
 
 ###### Step 4: Compile 
 
