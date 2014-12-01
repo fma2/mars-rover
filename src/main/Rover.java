@@ -35,13 +35,6 @@ public class Rover {
 	
 	// Print the rover's position to the console
 	public void printPosition() {
-		System.out.print(position.getX());
-		System.out.print(" ");
-		
-		System.out.print(position.getY());
-		System.out.print(" ");
-		
-		System.out.print(position.getDirection());
-		System.out.println(" ");
+		System.out.println(""+position.getX()+" "+position.getY()+" " +position.getDirection()+"");
 	}
 }
