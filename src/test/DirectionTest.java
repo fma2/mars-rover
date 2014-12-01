@@ -7,16 +7,12 @@ import main.Direction;
 
 import org.junit.Test;
 
-public class DirectionTest {
-
-	String message = "Pass";	
-	MessageUtil messageUtil = new MessageUtil(message);
-	
+public class DirectionTest {	
 	@Test
 	public void testFromStringtoDirection() {
 		String north = "N";
 		Direction direction = Direction.fromStringToDirection(north);
-		assertThat(message, direction, is(Direction.NORTH));
+		assertThat(direction, is(Direction.NORTH));
 	}
 	
 	@Test
