@@ -164,6 +164,7 @@ Again, make sure you are in the src directory, and run the following in the comm
 java main.Program input.txt
 ```
 
+###### Step 5: Run Tests
 ```
 java test.TestRunner
 ```
