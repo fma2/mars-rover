@@ -88,6 +88,7 @@ public class RoverTest {
 		assertTrue("End coordinates are not as expected", arePositionObjectsEqual(rover7.getPosition(), position7));
 	}
 	
+	// Checks to see if position objects are equal by checking if they have the same field values
 	public boolean arePositionObjectsEqual(Position position1, Position position2) {
 		if (position1.getX() == position2.getX() && position1.getY() == position2.getY() && position1.getDirection() == position2.getDirection()){
 			return true;
