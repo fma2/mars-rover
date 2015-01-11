@@ -6,6 +6,10 @@ import java.io.*;
 public class Program {
 
 	public static void main(String[] args) {
+
+	  // input.txt shouldn't be hard coded here, and you probably don't want to have 'src' in the path.
+	  // I would suggest not having a default input, just like other command line programs don't have a default input.
+	  // ie, git doesn't have a default input, if there's no input file it will print an error and exit.
 		String inputFileName = "src/input.txt";
 		
 		// When running other input files besides default - input.txt
@@ -29,7 +33,7 @@ public class Program {
 				String[] parts = roverPosition.split(" ");
 
 				if (parts.length != 3){
-					throw new UnsupportedOperationException("Invalid input!");
+				  throw new UnsupportedOperationException("Invalid input!"); // provide a better error message, why is the input invalid?
 				}
 				
 				int xCoordinate = Integer.valueOf(parts[0]); int yCoordinate = Integer.valueOf(parts[1]);

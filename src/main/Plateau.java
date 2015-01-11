@@ -1,11 +1,20 @@
 package main;
 
+// Needs more description comments.
 // The Plateau object with x and y fields;
+// Also, use spaces instead of tabs. Tabs behave strangely across different people's editors, and in email
+// formatting.
 public class Plateau {
 
+  	// These should have better names
+	// Also, add a comment that x and y are the upper bounds, and that 0, 0 are
+	// the lower bounds.
+	// Also, generally private members (and member functions go at the bottome of the class, and the
+	// public methods go at the top.
 	private int x;
 	private int y;
 
+  // xCoordinate and yCoordinate should have better names.
 	public Plateau (int xCoordinate, int yCoordinate){
 		this.x = xCoordinate;
 		this.y = yCoordinate;
@@ -42,7 +51,17 @@ public class Plateau {
 	}
 	
 	// Checks if rover is out of bounds of the plateau
+	// Also, you aren't really checking if the Rover is out of bounds, you've
+        // checking a possible Rover position I think. Also maybe isPositionInBounds is 
+        // more natural.
 	public boolean isRoverOutOfBounds(Position roverPosition){
+
+	  // These can be a single if:
+	  // if (roverPosition.getX() > getX() ||
+	  //	 roverPosition.getY() > getY() ||
+	  //     ...
+
+
 		if (roverPosition.getX() > getX()) {
 			return true;
 		}

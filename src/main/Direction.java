@@ -2,6 +2,8 @@ package main;
 // The Direction enum contains direction constants.
 // Each constant has methods, left(), right(), toString().
 
+// This is nice that all of the directions and left and right operations
+// are encoded in one place.
 public enum Direction {
 	NORTH {
 		public Direction left() {
@@ -60,8 +62,11 @@ public enum Direction {
 		}
 	},;
 	
+	// cool, abstract interface.
 	public abstract Direction left();
 	public abstract Direction right();
+
+	// why do we need this @Override?
 	@Override
 	public abstract String toString();
 	

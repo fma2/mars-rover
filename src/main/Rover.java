@@ -10,7 +10,11 @@ public class Rover {
 	}
 
 	// Takes string of instructions input and parses to move the the rover
+  // Its nice that you pass in the Plateau, because then if we want to change the implementation of Plateau, its very modular.
+  // Like a more complicated plateau that's not just a square. Nice! :)
 	public void direct(String[] instructions, Plateau plateau){
+
+	  // Add a comment that this check is for checking if the initial position is out of bounds.
 		if (plateau.isRoverOutOfBounds(position)){
 			throw new UnsupportedOperationException("Rover out of bounds!!!");
 		}
@@ -29,6 +33,7 @@ public class Rover {
 	}
 	
 	// Get information on the position of the rover
+	// Is this for testing?
 	public Position getPosition(){
 		return position;
 	}
