@@ -3,28 +3,28 @@ package main;
 // The Plateau object with x and y fields;
 public class Plateau {
 
-	private int x;
-	private int y;
+	private int xCoordinate;
+	private int yCoordinate;
 
 	public Plateau (int xCoordinate, int yCoordinate){
-		this.x = xCoordinate;
-		this.y = yCoordinate;
+		this.xCoordinate = xCoordinate;
+		this.yCoordinate = yCoordinate;
 	}
 	
 	public void setX(int xCoordinate) {
-		x = xCoordinate;
+		xCoordinate = xCoordinate;
 	}
 
 	public int getX() {
-		return x;
+		return xCoordinate;
 	}
 	
 	public void setY(int yCoordinate) {
-		y = yCoordinate;
+		yCoordinate = yCoordinate;
 	}
 
 	public int getY() {
-		return y;
+		return yCoordinate;
 	}
 	
 	// Converts the string provided by input into an array of integers
