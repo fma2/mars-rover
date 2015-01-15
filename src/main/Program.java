@@ -1,5 +1,8 @@
 package main;
 import java.io.*;
+import java.util.*;
+
+import commands.*;
 
 // The Program class contains the main method to run the program. 
 // It uses the input.txt file to create the plateau and rovers and move each rover.  
@@ -34,12 +37,24 @@ public class Program {
 				
 				int xCoordinate = Integer.valueOf(parts[0]); int yCoordinate = Integer.valueOf(parts[1]);
 				Direction direction = Direction.fromStringToDirection(parts[2]);
-				rover = new Rover(xCoordinate, yCoordinate, direction);
+				Position position = new Position(xCoordinate, yCoordinate);
+				rover = new Rover(plateau, position, direction);
+//				rover = new Rover(xCoordinate, yCoordinate, direction);
 				
 				instructions = br.readLine().split("");
+				List<ICommand> roverCommands = new ArrayList<ICommand>();
+				for (int i=0; i<instructions.length; i++) {
+					if(instructions[i].equals("L")){
+						roverCommands.add(new TurnLeftCommand());
+					} else if(instructions[i].equals("R")){
+						roverCommands.add(new TurnRightCommand());
+					} else if(instructions[i].equals("M")) {
+						roverCommands.add(new MoveCommand());
+					}
+				}
 				
-				rover.direct(instructions, plateau);
-				rover.printPosition();					
+//				rover.direct(roverCommands);
+//				rover.printPosition();					
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
