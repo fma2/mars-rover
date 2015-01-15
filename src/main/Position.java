@@ -4,27 +4,25 @@ public class Position {
 
 	private int x;
 	private int y;	
-	private Direction direction;
 	
-	public Position (int xCoordinate, int yCoordinate, Direction direction) {
+	public Position (int xCoordinate, int yCoordinate) {
 		this.x = xCoordinate;
 		this.y = yCoordinate;
-		this.direction = direction;
 	}
 	
 	// Sets the direction of the rover to turn right from the current direction
-	public void setDirectionRight(){
-		direction = direction.right();
-	}
+//	public void setDirectionRight(){
+//		direction = direction.right();
+//	}
 	
 	// Sets the direction of the rover to turn left from the current direction
-	public void setDirectionLeft() {
-		direction = direction.left();
-	}
+//	public void setDirectionLeft() {
+//		direction = direction.left();
+//	}
 	
-	public Direction getDirection() {
-		return direction;
-	}
+//	public Direction getDirection() {
+//		return direction;
+//	}
 	
 	public void setX(int xCoordinate) {
 		x = xCoordinate;
@@ -43,22 +41,22 @@ public class Position {
 	}
 
 	// Moves the rover along x or y depending on its current direction
-	public void move() {
-		switch (getDirection()) {
-		case NORTH:
-			y++;
-			break;
-		case SOUTH:
-			y--;
-			break;
-		case EAST:
-			x++;
-			break;
-		case WEST:
-			x--;
-			break;
-		default:
-			break;
-		}
-	}
+//	public void move() {
+//		switch (getDirection()) {
+//		case NORTH:
+//			y++;
+//			break;
+//		case SOUTH:
+//			y--;
+//			break;
+//		case EAST:
+//			x++;
+//			break;
+//		case WEST:
+//			x--;
+//			break;
+//		default:
+//			break;
+//		}
+//	}
 }
