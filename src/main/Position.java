@@ -11,7 +11,7 @@ public class Position {
 	}
 	
 	public void setX(int x) {
-		xCoordinate = x;
+		this.xCoordinate = x;
 	}
 
 	public int getX() {
@@ -19,7 +19,7 @@ public class Position {
 	}
 
 	public void setY(int y) {
-		yCoordinate = y;
+		this.yCoordinate = y;
 	}
 
 	public int getY() {
