@@ -21,7 +21,7 @@ public class PlateauTest {
 	@Test
 	public void testIsRoverisOutofBoundsReturnsTrueWhenOutofBounds() {
 		Plateau plateau = new Plateau (5,5);
-		Position position = new Position(6, 5, Direction.NORTH);
+		Position position = new Position(6, 5);
 		boolean actual = plateau.isRoverOutOfBounds(position);
 		boolean expected = true;
 		assertEquals(expected, actual);
