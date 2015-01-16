@@ -19,10 +19,10 @@ public class Rover {
 
 	// Takes string of instructions input and parses to move the the rover
 	public void direct(String[] instructions){
-		List<ICommand> roverCommands = StringInstructionsParser.buildCommands(instructions);
-//		if (plateau.isRoverOutOfBounds(position)){
-//			throw new UnsupportedOperationException("Rover out of bounds!!!");
-//		}
+		List<ICommand> roverCommands = StringInstructionsParser.buildCommandsList(instructions);
+		if (plateau.isRoverOutOfBounds(currentPosition)){
+			throw new UnsupportedOperationException("Rover out of bounds!!!");
+		}
 		for (ICommand command : roverCommands) {	
 			command.execute(this);
 		}
