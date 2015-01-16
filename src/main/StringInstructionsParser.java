@@ -1,22 +1,27 @@
 package main;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import commands.*;
 
 public class StringInstructionsParser {
 	
-	public static List<ICommand> buildCommands(String[] instructions) { 
+	private static HashMap<String, ICommand> stringToCommandMap = new HashMap<String, ICommand>() {
+		{
+			put("L", new TurnLeftCommand());
+			put("R", new TurnRightCommand());
+			put("M", new MoveCommand());
+		}
+	};
+	
+	private static ICommand lookupEquivalentCommand(final String commandString) {
+        return stringToCommandMap.get(commandString);
+    }
+	
+	public static List<ICommand> buildCommandsList(String[] instructions) { 
 		List<ICommand> roverCommands = new ArrayList<ICommand>();
 		for (int i=0; i<instructions.length; i++) {
-			if(instructions[i].equals("L")){
-				roverCommands.add(new TurnLeftCommand());
-			} else if(instructions[i].equals("R")){
-				roverCommands.add(new TurnRightCommand());
-			} else if(instructions[i].equals("M")) {
-				roverCommands.add(new MoveCommand());
-			}
+			roverCommands.add(lookupEquivalentCommand(instructions[i]));
 		}
 		return roverCommands;
 	}
