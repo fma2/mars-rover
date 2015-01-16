@@ -39,22 +39,11 @@ public class Program {
 				Direction direction = Direction.fromStringToDirection(parts[2]);
 				Position position = new Position(xCoordinate, yCoordinate);
 				rover = new Rover(plateau, position, direction);
-//				rover = new Rover(xCoordinate, yCoordinate, direction);
 				
 				instructions = br.readLine().split("");
-				List<ICommand> roverCommands = new ArrayList<ICommand>();
-				for (int i=0; i<instructions.length; i++) {
-					if(instructions[i].equals("L")){
-						roverCommands.add(new TurnLeftCommand());
-					} else if(instructions[i].equals("R")){
-						roverCommands.add(new TurnRightCommand());
-					} else if(instructions[i].equals("M")) {
-						roverCommands.add(new MoveCommand());
-					}
-				}
 				
-//				rover.direct(roverCommands);
-//				rover.printPosition();					
+				rover.direct(instructions);
+				rover.printPosition();					
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
