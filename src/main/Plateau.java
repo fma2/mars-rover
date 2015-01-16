@@ -12,7 +12,7 @@ public class Plateau {
 	}
 	
 	public void setX(int x) {
-		xCoordinate = x;
+		this.xCoordinate = x;
 	}
 
 	public int getX() {
@@ -20,7 +20,7 @@ public class Plateau {
 	}
 	
 	public void setY(int y) {
-		yCoordinate = y;
+		this.yCoordinate = y;
 	}
 
 	public int getY() {
