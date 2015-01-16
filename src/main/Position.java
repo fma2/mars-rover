@@ -2,12 +2,12 @@ package main;
 // The Position class stores and manipulates the position of the Rover
 public class Position {
 
-	private int x;
-	private int y;	
+	private int xCoordinate;
+	private int yCoordinate;	
 	
-	public Position (int xCoordinate, int yCoordinate) {
-		this.x = xCoordinate;
-		this.y = yCoordinate;
+	public Position (int x, int y) {
+		this.xCoordinate = x;
+		this.yCoordinate = y;
 	}
 	
 	// Sets the direction of the rover to turn right from the current direction
@@ -24,21 +24,22 @@ public class Position {
 //		return direction;
 //	}
 	
-	public void setX(int xCoordinate) {
-		x = xCoordinate;
+	public void setX(int x) {
+		xCoordinate = x;
 	}
 
 	public int getX() {
-		return x;
+		return xCoordinate;
 	}
 
-	public void setY(int yCoordinate) {
-		y = yCoordinate;
+	public void setY(int y) {
+		yCoordinate = y;
 	}
 
 	public int getY() {
-		return y;
+		return yCoordinate;
 	}
+	
 
 	// Moves the rover along x or y depending on its current direction
 //	public void move() {
