@@ -1,8 +1,5 @@
 package main;
 import java.io.*;
-import java.util.*;
-
-import commands.*;
 
 // The Program class contains the main method to run the program. 
 // It uses the input.txt file to create the plateau and rovers and move each rover.  
