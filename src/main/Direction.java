@@ -15,6 +15,18 @@ public enum Direction {
 		public String toString() {
 			return "N";
 		}
+
+		@Override
+		public int getDeltaX() {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+
+		@Override
+		public int getDeltaY() {
+			return 1;
+		}
+		
 	},
 	
 	SOUTH {
@@ -28,6 +40,16 @@ public enum Direction {
 		
 		public String toString() {
 			return "S";
+		}
+
+		@Override
+		public int getDeltaX() {
+			return 0;
+		}
+
+		@Override
+		public int getDeltaY() {
+			return -1;
 		}
 		
 	},
@@ -44,6 +66,16 @@ public enum Direction {
 		public String toString() {
 			return "E";
 		}
+
+		@Override
+		public int getDeltaX() {
+			return 1;
+		}
+
+		@Override
+		public int getDeltaY() {
+			return 0;
+		}
 	},
 	
 	WEST {
@@ -58,10 +90,23 @@ public enum Direction {
 		public String toString() {
 			return "W";
 		}
+
+		@Override
+		public int getDeltaX() {
+			// TODO Auto-generated method stub
+			return -1;
+		}
+
+		@Override
+		public int getDeltaY() {
+			return 0;
+		}
 	},;
 	
 	public abstract Direction left();
 	public abstract Direction right();
+	public abstract int getDeltaX();
+	public abstract int getDeltaY();
 	@Override
 	public abstract String toString();
 	
