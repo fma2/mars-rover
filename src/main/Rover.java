@@ -4,9 +4,11 @@ package main;
 public class Rover {
 
 	private Position position;
+	private Direction direction;
 	
 	public Rover(int xCoordinate, int yCoordinate, Direction initialDirection) {
-		this.position = new Position(xCoordinate, yCoordinate, initialDirection); 
+		this.position = new Position(xCoordinate, yCoordinate);
+		this.direction = initialDirection;
 	}
 
 	// Takes string of instructions input and parses to move the the rover
@@ -16,16 +18,27 @@ public class Rover {
 		}
 		for (int i=0; i < instructions.length; i++) {	
 			if(instructions[i].equals("L")){
-				position.setDirectionLeft();
+				this.setDirectionLeft();
 			} else if(instructions[i].equals("R")){
-				position.setDirectionRight();
+				this.setDirectionRight();
 			} else if(instructions[i].equals("M")) {
-				position.move();
+				this.move();
 				if (plateau.isRoverOutOfBounds(position)){
 					throw new UnsupportedOperationException("Rover out of bounds!!!");
 				}
 			}
 		}
+	}
+	public void setDirectionRight(){
+		this.direction = direction.right();
+	}
+
+	public void setDirectionLeft() {
+		this.direction = direction.left();
+	}
+	
+	public Direction getDirection() {
+		return direction;
 	}
 	
 	// Get information on the position of the rover
@@ -33,8 +46,13 @@ public class Rover {
 		return position;
 	}
 	
+	public void move() {
+		position.setX(position.getX() + direction.getDeltaX());
+		position.setY(position.getY() + direction.getDeltaY());
+	}
+	
 	// Print the rover's position to the console
 	public void printPosition() {
-		System.out.println(""+position.getX()+" "+position.getY()+" " +position.getDirection()+"");
+		System.out.println(""+position.getX()+" "+position.getY()+" " +getDirection()+"");
 	}
 }
