@@ -26,5 +26,21 @@ public class PlateauTest {
 		boolean expected = true;
 		assertEquals(expected, actual);
 	}
+	
+	@Test
+	public void testIfBeaconisLeft() {
+		Plateau plateau = new Plateau (5,5);
+		Position position = new Position(6,5, Direction.NORTH);
+		plateau.leaveBeacon(position);
+		assertThat(plateau.checkIfBeacon(position), is(true)); 
+	}
+	
+	@Test
+	public void testIfNoBeacon() {
+		Plateau plateau = new Plateau (5,5);
+		Position position = new Position(6,5, Direction.NORTH);
+//		plateau.leaveBeacon(position);
+		assertThat(plateau.checkIfBeacon(position), is(false)); 
+	}
 
 }
