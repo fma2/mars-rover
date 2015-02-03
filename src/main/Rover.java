@@ -1,5 +1,7 @@
 package main;
 
+import java.util.List;
+
 // The Rover object with a position field
 public class Rover {
 
@@ -13,28 +15,21 @@ public class Rover {
 
 	// Takes string of instructions input and parses to move the the rover
 	public void direct(String[] instructions, Plateau plateau){
+		List<ICommand> roverCommands = StringCommandParser.buildCommandsList(instructions);
 		if (plateau.isRoverOutOfBounds(position)){
 			throw new UnsupportedOperationException("Rover out of bounds!!!");
 		}
-		for (int i=0; i < instructions.length; i++) {	
-			if(instructions[i].equals("L")){
-				this.setDirectionLeft();
-			} else if(instructions[i].equals("R")){
-				this.setDirectionRight();
-			} else if(instructions[i].equals("M")) {
-				this.move();
-				if (plateau.isRoverOutOfBounds(position)){
-					throw new UnsupportedOperationException("Rover out of bounds!!!");
-				}
-			}
+		for(ICommand command : roverCommands) {
+			command.execute(this);
 		}
 	}
-	public void setDirectionRight(){
-		this.direction = direction.right();
+	
+	public void turnRight(){
+		direction = direction.right();
 	}
 
-	public void setDirectionLeft() {
-		this.direction = direction.left();
+	public void turnLeft() {
+		direction = direction.left();
 	}
 	
 	public Direction getDirection() {
@@ -53,6 +48,6 @@ public class Rover {
 	
 	// Print the rover's position to the console
 	public void printPosition() {
-		System.out.println(""+position.getX()+" "+position.getY()+" " +getDirection()+"");
+		System.out.println(""+position.getX()+" "+position.getY()+" " +direction.toString()+"");
 	}
 }
