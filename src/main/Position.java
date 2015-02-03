@@ -9,7 +9,6 @@ public class Position {
 		this.x = xCoordinate;
 		this.y = yCoordinate;
 	}
-	
 	public void setX(int xCoordinate) {
 		x = xCoordinate;
 	}
@@ -25,24 +24,4 @@ public class Position {
 	public int getY() {
 		return y;
 	}
-
-	// Moves the rover along x or y depending on its current direction
-//	public void move() {
-//		switch (getDirection()) {
-//		case NORTH:
-//			y++;
-//			break;
-//		case SOUTH:
-//			y--;
-//			break;
-//		case EAST:
-//			x++;
-//			break;
-//		case WEST:
-//			x--;
-//			break;
-//		default:
-//			break;
-//		}
-//	}
 }
