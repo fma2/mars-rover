@@ -18,7 +18,6 @@ public enum Direction {
 
 		@Override
 		public int getDeltaX() {
-			// TODO Auto-generated method stub
 			return 0;
 		}
 
@@ -93,7 +92,6 @@ public enum Direction {
 
 		@Override
 		public int getDeltaX() {
-			// TODO Auto-generated method stub
 			return -1;
 		}
 
