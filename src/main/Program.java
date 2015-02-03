@@ -6,7 +6,7 @@ import java.io.*;
 public class Program {
 
 	public static void main(String[] args) {
-		String inputFileName = "src/input.txt";
+		String inputFileName = "src/input2.txt";
 		
 		// When running other input files besides default - input.txt
 		if (args.length == 1) {
