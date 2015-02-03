@@ -41,17 +41,6 @@ public class RoverTest {
 		assertNotSame(afterDirectPosition.getX(), beforeDirectXCoordinate);
 	}
 	
-	@Test(expected=UnsupportedOperationException.class)
-	public void testExceptionRoverisOutofBoundsatBeginningofInstructions() {
-		Rover rover3 = new Rover(6, 6, Direction.NORTH);
-		rover3.direct("LMMMMM".split(""), plateau1);
-	}
-	
-	@Test(expected=UnsupportedOperationException.class)
-	public void testExceptionRoverisOutofBoundsatEndofMove() {
-		rover2.direct("LMMMMM".split(""), plateau1);		
-	}
-
 	@Test
 	public void testEndCoordinatesforRover4() {
 		Rover rover4 = new Rover(8, 1, Direction.EAST);
@@ -93,5 +82,14 @@ public class RoverTest {
 		if (position1.getX() == position2.getX() && position1.getY() == position2.getY() && position1.getDirection() == position2.getDirection()){
 			return true;
 		} else return false;
+	}
+	
+	@Test
+	public void checkRoverDeath() {
+		Plateau plateau = new Plateau(5,5);
+		Rover rover = new Rover(5,5, Direction.NORTH);
+		String[] instructions = { "M" };
+		rover.direct(instructions, plateau);
+		assertFalse(rover.getIsAlive());
 	}
 }
