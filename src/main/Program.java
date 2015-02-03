@@ -33,7 +33,7 @@ public class Program {
 				}
 				
 				int xCoordinate = Integer.valueOf(parts[0]); int yCoordinate = Integer.valueOf(parts[1]);
-				Direction direction = Direction.fromStringToDirection(parts[2]);
+				Direction direction = Direction.lookupDirectionEquivalent(parts[2]);
 				rover = new Rover(xCoordinate, yCoordinate, direction);
 				
 				instructions = br.readLine().split("");
