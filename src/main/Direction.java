@@ -1,4 +1,7 @@
 package main;
+
+import java.util.HashMap;
+
 // The Direction enum contains direction constants.
 // Each constant has methods, left(), right(), toString().
 
@@ -109,18 +112,19 @@ public enum Direction {
 	public abstract String toString();
 	
 	// Turns string provided by input to a Direction constant
-	public static Direction fromStringToDirection(String directionStr){
-		Direction direction = null;
-		if (directionStr.equals("N")) {
-			direction = Direction.NORTH;
-		} else if (directionStr.equals("S")) {
-			direction = Direction.SOUTH;
-		} else if (directionStr.equals("E")) {
-			direction = Direction.EAST;
-		} else if (directionStr.equals("W")) {
-			direction = Direction.WEST;
+	
+	public static HashMap<String, Direction> stringToDirectionMap = new HashMap<String, Direction>() {
+		{
+			put("N", Direction.NORTH);
+			put("S", Direction.SOUTH);
+			put("E", Direction.EAST);
+			put("W", Direction.WEST);
 		}
-		return direction;
+	};
+	
+	public static Direction lookupDirectionEquivalent(String directionStr) {
+		return stringToDirectionMap.get(directionStr);
 	}
+	
 };
 
